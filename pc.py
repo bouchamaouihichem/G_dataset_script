@@ -13,6 +13,7 @@ with open ( "MClist_CMSSW_10_0.txt" ) as file:
 		str ='dasgoclient --query="site dataset='+ line[:-1] + '"'
 		result = subprocess.check_output(str,shell=True)
 		# result = terminal output basically
+		print result
 		if result.find("Disk") != -1 and result.find("WARNING") == -1:
 			f.write(line)
 f.close()
